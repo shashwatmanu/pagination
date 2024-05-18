@@ -71,12 +71,15 @@ setFilteredData(paginatedVar);
         
         
         <table style={{width:'100%', borderCollapse: 'collapse', textAlign:'left'}}>
+           <thead>
             <tr style={{backgroundColor:'green',color:'white'}}>
                 <th>ID</th>
                 <th>Name</th>
                 <th>Email</th>
                 <th>Role</th>
             </tr>
+            </thead>
+            <tbody>
            {filteredData.map((emp)=> ( <tr style={{borderBottom:'1px solid black'}}>
                 <td>{emp.id}</td>
                 <td>{emp.name}</td>
@@ -84,6 +87,7 @@ setFilteredData(paginatedVar);
                 <td>{emp.role}</td>
             </tr>
             ))}
+            </tbody>
         </table>
         <div style={{display:'flex', justifyContent:'center'}}>
 <button onClick={handlePrevious}>Previous</button>
