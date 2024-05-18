@@ -13,6 +13,12 @@ const Table = () => {
       try{
           let res = await axios.get(url);
           setData(res.data);
+          let paginatedVar = [];
+          for(let i=0;i<10;i++){
+  paginatedVar.push(res.data[i]);
+          }
+          // console.log(paginatedVar);
+  setFilteredData(paginatedVar);
           
       }
       catch(e){
@@ -51,9 +57,9 @@ setFilteredData(paginatedVar);
         filterData();
     },[page])
 
-    useEffect(()=>{
-        filterData();
-    },[data])
+    // useEffect(()=>{
+    //     filterData();
+    // },[data])
 
    
 
